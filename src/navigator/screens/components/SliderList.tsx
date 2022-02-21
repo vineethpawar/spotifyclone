@@ -1,19 +1,26 @@
-import {Box, Heading, ScrollView, Text, VStack} from "native-base";
+import {Heading, ScrollView, VStack} from "native-base";
 import React from "react";
-import {ImageContainer} from "./common/ImageContainer";
 import SliderListItem from "./common/SliderListItem";
-
-export const SliderList = () => {
+interface SliderList {
+  title: string;
+  isLoaded?: boolean;
+  type: string;
+}
+export const SliderList: React.FC<SliderList> = ({
+  title,
+  isLoaded = false,
+  type,
+}) => {
   return (
     <VStack my={3}>
-      <Heading my={3}>Shows you might like awd awd awdawd </Heading>
+      <Heading my={3}>{title} </Heading>
       <ScrollView horizontal>
-        <SliderListItem isLoaded={true} />
-        <SliderListItem />
-        <SliderListItem />
-        <SliderListItem />
-        <SliderListItem />
-        <SliderListItem />
+        <SliderListItem type={type} isLoaded={isLoaded} />
+        <SliderListItem type={type} isLoaded={isLoaded} />
+        <SliderListItem type={type} isLoaded={isLoaded} />
+        <SliderListItem type={type} isLoaded={isLoaded} />
+        <SliderListItem type={type} isLoaded={isLoaded} />
+        <SliderListItem type={type} isLoaded={isLoaded} />
       </ScrollView>
     </VStack>
   );
