@@ -8,17 +8,38 @@
  * @format
  */
 
-import {NativeBaseProvider, VStack} from "native-base";
-import React from "react";
+import {
+  Box,
+  HStack,
+  NativeBaseProvider,
+  Pressable,
+  Slide,
+  Text,
+  VStack,
+} from "native-base";
+import React, {useState} from "react";
 import {StatusBar} from "react-native";
 import Navigator from "./src/navigator";
+import MiniPlayer from "./src/navigator/screens/components/common/MiniPlayer";
 import theme from "./src/theme";
+import {Toasts} from "./src/utils/Toasts";
 
 const App = () => {
+  const [isToastOpen, setIsToastOpen] = useState(false);
+  const [toastTitle, setToastTitle] = useState("");
+  const showToast = (title: string) => {
+    setToastTitle(title);
+    setIsToastOpen(true);
+    setTimeout(() => {
+      setIsToastOpen(false);
+    }, 2000);
+  };
   return (
     <NativeBaseProvider theme={theme}>
       <StatusBar barStyle={"dark-content"} backgroundColor={"#1b7d3c"} />
       <Navigator />
+      <MiniPlayer showToast={showToast} />
+      <Toasts isToastOpen={isToastOpen} toastTitle={toastTitle} />
     </NativeBaseProvider>
   );
 };

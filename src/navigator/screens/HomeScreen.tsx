@@ -14,13 +14,13 @@ import SliderList from "./components/SliderList";
 
 export const HomeScreen: React.FC = () => {
   return (
-    <ScrollView bg="background.200" py={5} px={3}>
+    <ScrollView position={"relative"} bg="background.200" py={5} px={3}>
       <Greeting mb={2} />
       <CommonlyPlayedList isLoaded={true} />
-      <SliderList />
-      <SliderList />
-
-      <VStack h={20} />
+      <SliderList title="Episodes for you" isLoaded={true} />
+      <SliderList title="Artist" type="artist" isLoaded={true} />
+      <SliderList title="Recently played" type="recent" isLoaded={true} />
+      <VStack h={true ? 40 : 20} />
     </ScrollView>
   );
 };
