@@ -1,7 +1,7 @@
 
 
 export const sliderListItemConfig = (type:string) =>{
-    let width=150,borderRadius=20,hasTitle=true,multiLineTitle=false,hasDesc=true,textAlign='left';
+    let width=130,borderRadius=20,hasTitle=true,multiLineTitle=false,hasDesc=true,textAlign='left';
 
     switch(type){
         case 'album': break;

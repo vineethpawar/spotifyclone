@@ -5,17 +5,24 @@ import {NavigationContainer} from "@react-navigation/native";
 import {VStack} from "native-base";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {HomeScreen} from "./screens/HomeScreen";
+import {SearchScreen} from "./screens/SearchScreen";
+import {LibraryScreen} from "./screens/LibraryScreen";
 const Tab = createBottomTabNavigator();
 
 const HomeStack = () => (
   <Stack.Navigator screenOptions={{headerShown: false}}>
-    <Stack.Screen name="Default" component={HomeScreen} />
+    <Stack.Screen name="Homescreen" component={HomeScreen} />
   </Stack.Navigator>
 );
-const SearchScreen = () => (
-  <VStack flex={1} bg="background.200">
-    <Icon name="search" size={40} color="white" />
-  </VStack>
+const SearchStack = () => (
+  <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Screen name="Searchscreen" component={SearchScreen} />
+  </Stack.Navigator>
+);
+const LibraryStack = () => (
+  <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Screen name="Libraryscreen" component={LibraryScreen} />
+  </Stack.Navigator>
 );
 const Stack = createNativeStackNavigator();
 
@@ -53,8 +60,8 @@ const Navigator = () => {
           tabBarActiveTintColor: "white",
         })}>
         <Tab.Screen name="Home" component={HomeStack} />
-        <Tab.Screen name="Search" component={SearchScreen} />
-        <Tab.Screen name="Your Library" component={SearchScreen} />
+        <Tab.Screen name="Search" component={SearchStack} />
+        <Tab.Screen name="Your Library" component={LibraryStack} />
       </Tab.Navigator>
     </NavigationContainer>
   );

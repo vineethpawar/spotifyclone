@@ -75,7 +75,7 @@ const customTheme = extendTheme({
                 return {
                   color: colorMode === "dark" ? "lightgrey" : "lightgrey",
                   style:{
-                    fontSize:27,
+                    fontSize:22,
                     fontWeight: "700",
                   }
                   
@@ -87,7 +87,7 @@ const customTheme = extendTheme({
               baseStyle: ({ colorMode }) => {
                 return {
                   color: colorMode === "dark" ? "grey" : "grey",
-                  fontSize:30,
+                  fontSize:'sm',
                   fontWeight: "500",
                 };
               },
@@ -97,8 +97,13 @@ const customTheme = extendTheme({
                   noOfLines:2,
                   flex:1,
                   color:"lightgrey",
-                  fontSize:"md",
-                  lineHeight:"sm",
+                  fontSize:"xs",
+                  lineHeight:"xs",
+                },
+                heading:{
+                  fontSize:22,
+                  color:"lightgrey",
+                  fontWeight:"bold"
                 }
               }
               
