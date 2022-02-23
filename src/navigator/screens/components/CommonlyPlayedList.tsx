@@ -44,7 +44,7 @@ export const CommonlyPlayedList: React.FC<CommonlyPlayedList> = ({
                     }}>
                     <HStack alignItems={"center"}>
                       <Box>
-                        <ImageContainer size={65} />
+                        <ImageContainer size={55} />
                       </Box>
                       <HStack space={1} flex={1} p={2} alignItems={"center"}>
                         {/* @ts-ignore */}
@@ -80,7 +80,7 @@ export const CommonlyPlayedList: React.FC<CommonlyPlayedList> = ({
                     }}>
                     <HStack alignItems={"center"}>
                       <Box>
-                        <ImageContainer size={65} />
+                        <ImageContainer size={55} />
                       </Box>
                       <HStack space={1} flex={1} p={2} alignItems={"center"}>
                         {/* @ts-ignore */}
