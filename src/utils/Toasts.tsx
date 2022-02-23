@@ -15,7 +15,7 @@ export const Toasts: React.FC<Toasts> = ({isToastOpen, toastTitle}) => {
           bg="white"
           mx={2}
           borderRadius={10}>
-          <Text fontSize={17} color={"black"}>
+          <Text fontSize={13} color={"black"}>
             {toastTitle}
           </Text>
         </HStack>

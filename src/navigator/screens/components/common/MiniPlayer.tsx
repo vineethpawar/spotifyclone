@@ -24,19 +24,19 @@ const MiniPlayer: React.FC<MiniPlayer> = ({showToast}) => {
             <Text
               color={"lightgrey"}
               textTransform={"capitalize"}
-              fontWeight={"bold"}
-              fontSize={16}>
+              fontWeight={"500"}
+              fontSize={"sm"}>
               awdaw asef
             </Text>
             <Text
               color={"lightgrey"}
               textTransform={"capitalize"}
-              fontSize={14}>
+              fontSize={"xs"}>
               awdaw
             </Text>
           </VStack>
         </HStack>
-        <HStack px={2} space={2} alignItems="center">
+        <HStack px={2} space={4} alignItems="center">
           <Pressable
             onPress={() => {
               if (!isLiked) {
@@ -50,7 +50,7 @@ const MiniPlayer: React.FC<MiniPlayer> = ({showToast}) => {
               return (
                 <Icon
                   name={!isLiked ? "favorite-outline" : "favorite"}
-                  size={30}
+                  size={25}
                   color={isPressed ? "lightgrey" : "white"}
                 />
               );
@@ -64,7 +64,7 @@ const MiniPlayer: React.FC<MiniPlayer> = ({showToast}) => {
               return (
                 <Icon
                   name={!isPlaying ? "play-arrow" : "pause"}
-                  size={35}
+                  size={30}
                   color={isPressed ? "lightgrey" : "white"}
                 />
               );
@@ -78,10 +78,9 @@ const MiniPlayer: React.FC<MiniPlayer> = ({showToast}) => {
         }}
         position={"relative"}
         colorScheme="light"
-        bottom="3px"
+        bottom="2px"
         value={45}
-        h={"3px"}
-        rounded={0}
+        h={"2px"}
         mx={4}
       />
     </VStack>

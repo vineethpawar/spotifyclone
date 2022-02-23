@@ -17,7 +17,7 @@ export const SliderListItem: React.FC<SliderItemList> = ({
         return (
           <Box
             w={sliderListItemConfig(type).width}
-            mr={5}
+            mr={3}
             style={{
               transform: [{scale: isPressed && isLoaded ? 0.96 : 1}],
             }}>
@@ -49,12 +49,12 @@ export const SliderListItem: React.FC<SliderItemList> = ({
                 <Text
                   noOfLines={sliderListItemConfig(type).multiLineTitle ? 2 : 1}
                   pb={"2px"}
-                  fontWeight={"bold"}
+                  fontWeight={"500"}
                   // @ts-ignore
                   textAlign={sliderListItemConfig(type).textAlign}
-                  fontSize={16}
+                  fontSize={"sm"}
                   color={"lightgrey"}>
-                  The
+                  The sef sef sef seesfs ef
                 </Text>
               </Skeleton>
             )}
@@ -74,7 +74,7 @@ export const SliderListItem: React.FC<SliderItemList> = ({
                 noOfLines={2}
                 lineHeight={"sm"}
                 fontWeight={"500"}
-                fontSize={15}
+                fontSize={"xs"}
                 color={"grey"}>
                 The stories of Mahabhrata
               </Text>
