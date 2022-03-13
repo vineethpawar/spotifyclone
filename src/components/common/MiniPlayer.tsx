@@ -19,7 +19,7 @@ const MiniPlayer: React.FC<MiniPlayer> = ({showToast}) => {
         mx={1}
         flex={1}>
         <HStack flex={1} alignItems={"center"} space={2}>
-          <ImageContainer borderRadius={5} size={50} />
+          <ImageContainer borderRadius={5} size={"40px"} />
           <VStack flex={1}>
             <Text
               color={"lightgrey"}
@@ -36,8 +36,9 @@ const MiniPlayer: React.FC<MiniPlayer> = ({showToast}) => {
             </Text>
           </VStack>
         </HStack>
-        <HStack px={2} space={4} alignItems="center">
+        <HStack px={2} space={2} alignItems="center">
           <Pressable
+            p={2}
             onPress={() => {
               if (!isLiked) {
                 showToast("Added to liked songs");
@@ -52,11 +53,13 @@ const MiniPlayer: React.FC<MiniPlayer> = ({showToast}) => {
                   name={!isLiked ? "favorite-outline" : "favorite"}
                   size={25}
                   color={isPressed ? "lightgrey" : "white"}
+                  style={{transform: [{scale: isPressed ? 0.9 : 1}]}}
                 />
               );
             }}
           </Pressable>
           <Pressable
+            p={2}
             onPress={() => {
               setIsPlaying(isPlaying => !isPlaying);
             }}>
@@ -66,6 +69,7 @@ const MiniPlayer: React.FC<MiniPlayer> = ({showToast}) => {
                   name={!isPlaying ? "play-arrow" : "pause"}
                   size={30}
                   color={isPressed ? "lightgrey" : "white"}
+                  style={{transform: [{scale: isPressed ? 0.9 : 1}]}}
                 />
               );
             }}

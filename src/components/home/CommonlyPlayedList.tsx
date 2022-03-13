@@ -1,8 +1,8 @@
 import {Box, HStack, Pressable, Skeleton, Text, VStack} from "native-base";
 import {IVStackProps} from "native-base/lib/typescript/components/primitives/Stack/VStack";
 import React from "react";
-import {config} from "../../../config";
-import {ImageContainer} from "./common/ImageContainer";
+import {config} from "../../config";
+import {ImageContainer} from "../common/ImageContainer";
 interface CommonlyPlayedList extends IVStackProps {
   isLoaded?: boolean;
 }

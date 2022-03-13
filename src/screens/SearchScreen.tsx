@@ -1,7 +1,7 @@
 import {ScrollView, Text, VStack} from "native-base";
 import React from "react";
-import {CategoriesGrid} from "./components/CategoriesGrid";
-import SearchBar from "./components/SearchBar";
+import {CategoriesGrid} from "../components/search/CategoriesGrid";
+import SearchBar from "../components/search/SearchBar";
 export const SearchScreen: React.FC = () => {
   const data = [
     {id: 1, genre: "pop"},
@@ -9,7 +9,7 @@ export const SearchScreen: React.FC = () => {
     {id: 3, genre: "bollywood"},
   ];
   return (
-    <ScrollView position={"relative"} bg="background.200" py={5}>
+    <ScrollView bg="background.200" py={5}>
       <VStack my={5} px={3}>
         <Text fontSize={"32px"} color="lightgrey" fontWeight="700">
           Search

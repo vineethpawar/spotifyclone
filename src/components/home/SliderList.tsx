@@ -1,6 +1,6 @@
-import {Heading, ScrollView, Text, VStack} from "native-base";
+import {ScrollView, Text, VStack} from "native-base";
 import React from "react";
-import SliderListItem from "./common/SliderListItem";
+import SliderListItem from "../common/SliderListItem";
 interface SliderList {
   title: string;
   isLoaded?: boolean;

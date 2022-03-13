@@ -1,6 +1,6 @@
 import {Box, FlatList, HStack, Pressable, Text, VStack} from "native-base";
 import React from "react";
-import {ImageContainer} from "./common/ImageContainer";
+import {ImageContainer} from "../common/ImageContainer";
 interface CategoryItem {
   id: number;
   genre: string;

@@ -2,11 +2,11 @@ import React from "react";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {NavigationContainer} from "@react-navigation/native";
-import {VStack} from "native-base";
+
 import Icon from "react-native-vector-icons/MaterialIcons";
-import {HomeScreen} from "./screens/HomeScreen";
-import {SearchScreen} from "./screens/SearchScreen";
-import {LibraryScreen} from "./screens/LibraryScreen";
+import {HomeScreen} from "../screens/HomeScreen";
+import {SearchScreen} from "../screens/SearchScreen";
+import {LibraryScreen} from "../screens/LibraryScreen";
 const Tab = createBottomTabNavigator();
 
 const HomeStack = () => (

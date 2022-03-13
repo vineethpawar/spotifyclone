@@ -1,8 +1,7 @@
-import {Box, Heading, HStack, Pressable, Text} from "native-base";
-import {IHStackProps} from "native-base/lib/typescript/components/primitives/Stack/HStack";
+import {Box, HStack, Pressable, Text} from "native-base";
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import {ImageContainer} from "./common/ImageContainer";
+import {ImageContainer} from "../common/ImageContainer";
 interface IIconList {
   iconName: string;
   iconSize: number;
@@ -22,11 +21,11 @@ export const ScreenTitleBar: React.FC<ScreenTitleBar> = ({
 }) => {
   return (
     <HStack alignItems={"center"}>
-      <Box mr={4} mt={"-4px"}>
-        {!!dp.length && (
+      {!!dp.length && (
+        <Box mr={4} mt={"-4px"}>
           <ImageContainer size={35} borderRadius={100} source={dp} />
-        )}
-      </Box>
+        </Box>
+      )}
       <HStack alignItems={"center"} justifyContent={"space-between"} flex={1}>
         {/* @ts-ignore */}
         <Text variant="heading" fontSize={25} lineHeight={25}>
@@ -34,7 +33,7 @@ export const ScreenTitleBar: React.FC<ScreenTitleBar> = ({
         </Text>
         <HStack space={1} alignItems={"center"}>
           {icons.map(icon => (
-            <Pressable>
+            <Pressable key={icon.iconName}>
               {({isPressed}) => {
                 return (
                   <Box p={2} key={icon.iconName} {...icon.iconProps}>

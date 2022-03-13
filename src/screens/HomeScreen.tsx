@@ -1,12 +1,17 @@
 import {ScrollView, VStack} from "native-base";
 import React from "react";
-import {CommonlyPlayedList} from "./components/CommonlyPlayedList";
-import {ScreenTitleBar} from "./components/ScreenTitleBar";
-import SliderList from "./components/SliderList";
+import {CommonlyPlayedList} from "../components/home/CommonlyPlayedList";
+import {ScreenTitleBar} from "../components/common/ScreenTitleBar";
+import SliderList from "../components/home/SliderList";
 
 export const HomeScreen: React.FC = () => {
   return (
-    <ScrollView position={"relative"} bg="background.200" py={5} px={3}>
+    <ScrollView
+      position={"relative"}
+      bg="background.200"
+      py={5}
+      px={3}
+      showsVerticalScrollIndicator={false}>
       <ScreenTitleBar
         title="Good morning"
         icons={[
@@ -15,7 +20,7 @@ export const HomeScreen: React.FC = () => {
         ]}
       />
       <CommonlyPlayedList isLoaded={true} />
-      <SliderList title="Episodes for you" isLoaded={true} />
+      <SliderList title="Episodes for you" isLoaded={false} />
       <SliderList title="Artist" type="artist" isLoaded={true} />
       <SliderList title="Recently played" type="recent" isLoaded={true} />
       <VStack h={true ? 40 : 20} />

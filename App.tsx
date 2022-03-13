@@ -8,19 +8,11 @@
  * @format
  */
 
-import {
-  Box,
-  HStack,
-  NativeBaseProvider,
-  Pressable,
-  Slide,
-  Text,
-  VStack,
-} from "native-base";
+import {NativeBaseProvider} from "native-base";
 import React, {useState} from "react";
 import {StatusBar} from "react-native";
 import Navigator from "./src/navigator";
-import MiniPlayer from "./src/navigator/screens/components/common/MiniPlayer";
+import MiniPlayer from "./src/components/common/MiniPlayer";
 import theme from "./src/theme";
 import {Toasts} from "./src/utils/Toasts";
 
@@ -36,7 +28,7 @@ const App = () => {
   };
   return (
     <NativeBaseProvider theme={theme}>
-      <StatusBar barStyle={"dark-content"} backgroundColor={"#1b7d3c"} />
+      <StatusBar barStyle={"light-content"} backgroundColor={"#1b7d3c"} />
       <Navigator />
       <MiniPlayer showToast={showToast} />
       <Toasts isToastOpen={isToastOpen} toastTitle={toastTitle} />

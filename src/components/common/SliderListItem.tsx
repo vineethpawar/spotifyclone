@@ -1,36 +1,39 @@
 import {Box, Pressable, Skeleton, Text} from "native-base";
 import React from "react";
 import {ImageContainer} from "./ImageContainer";
-import {sliderListItemConfig} from "../../../../utils/common";
+import {sliderListItemConfig} from "../../utils/common";
+
 interface SliderItemList {
   isLoaded: boolean;
   type: string;
+  w?: number;
 }
 
 export const SliderListItem: React.FC<SliderItemList> = ({
   isLoaded = false,
   type = "album",
+  w,
 }) => {
   return (
     <Pressable>
       {({isPressed}) => {
         return (
           <Box
-            w={sliderListItemConfig(type).width}
-            mr={3}
+            w={w ? w : sliderListItemConfig(type).width}
+            mr={sliderListItemConfig(type).marginRight}
             style={{
               transform: [{scale: isPressed && isLoaded ? 0.96 : 1}],
             }}>
             <Box my={3}>
               <Skeleton
-                size={sliderListItemConfig(type).width}
+                size={w ? w : sliderListItemConfig(type).width}
                 borderRadius={sliderListItemConfig(type).borderRadius}
                 speed={2}
                 startColor={"gray.700"}
                 endColor={"gray.800"}
                 isLoaded={isLoaded}>
                 <ImageContainer
-                  size={sliderListItemConfig(type).width}
+                  size={w ? w : sliderListItemConfig(type).width}
                   borderRadius={sliderListItemConfig(type).borderRadius}
                 />
               </Skeleton>
@@ -54,7 +57,7 @@ export const SliderListItem: React.FC<SliderItemList> = ({
                   textAlign={sliderListItemConfig(type).textAlign}
                   fontSize={"sm"}
                   color={"lightgrey"}>
-                  The sef sef sef seesfs ef
+                  The sef sef sef seesfs efycyct
                 </Text>
               </Skeleton>
             )}
@@ -71,7 +74,7 @@ export const SliderListItem: React.FC<SliderItemList> = ({
 
             {isLoaded && sliderListItemConfig(type).hasDesc && (
               <Text
-                noOfLines={2}
+                noOfLines={sliderListItemConfig(type).singleLineDesc ? 1 : 2}
                 lineHeight={"sm"}
                 fontWeight={"500"}
                 fontSize={"xs"}
@@ -90,16 +93,18 @@ export const SliderListItem: React.FC<SliderItemList> = ({
                   startColor={"gray.700"}
                   endColor={"gray.800"}
                 />
-                <Skeleton
-                  h="3"
-                  w={"50%"}
-                  mt={1}
-                  mb={"6px"}
-                  borderRadius={20}
-                  speed={2}
-                  startColor={"gray.700"}
-                  endColor={"gray.800"}
-                />
+                {!sliderListItemConfig(type).singleLineDesc && (
+                  <Skeleton
+                    h="3"
+                    w={"50%"}
+                    mt={1}
+                    mb={"6px"}
+                    borderRadius={20}
+                    speed={2}
+                    startColor={"gray.700"}
+                    endColor={"gray.800"}
+                  />
+                )}
               </>
             )}
           </Box>

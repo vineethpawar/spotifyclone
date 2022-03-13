@@ -1,7 +1,5 @@
-
-
 export const sliderListItemConfig = (type:string) =>{
-    let width=130,borderRadius=20,hasTitle=true,multiLineTitle=false,hasDesc=true,textAlign='left';
+    let width:number|string=130,borderRadius=20,hasTitle=true,multiLineTitle=false,hasDesc=true,textAlign='left',marginRight=4,singleLineDesc=false;
 
     switch(type){
         case 'album': break;
@@ -18,6 +16,12 @@ export const sliderListItemConfig = (type:string) =>{
             multiLineTitle=true;
             break;
         }
+        case 'libraryGrid': {
+            marginRight=0;
+            singleLineDesc=true;
+            break;
+        }
+ 
     }
-    return {width,borderRadius,hasTitle,multiLineTitle,hasDesc,textAlign};
+    return {width,borderRadius,hasTitle,multiLineTitle,hasDesc,textAlign,marginRight,singleLineDesc};
 }
