@@ -1,6 +1,6 @@
 # spotifyclone
 
-Working on a Spotify clone using React-native , ReactNavigation , NativeBase.
+Made Spotify clone UI using React-native , ReactNavigation , NativeBase.
 
-WIP - Demo
-https://www.youtube.com/watch?v=r6B-aYZWBN4
+https://github.com/vineethpawar/spotifyclone/assets/55575881/8ec7dff3-6de7-4b98-aef8-98886e0b34b3
+
